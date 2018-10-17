@@ -45,7 +45,8 @@
               <div ng-if="content.thumbnail" class="list-thumbnail"><img ng-src="{{content.thumbnail.src}}"></div>
               <div ng-if="!content.thumbnail">-</div>
             </td>
-            <td class="text-left"><a href="{{content.url}}" title="{{content.title}}" target="_blank">{{content.title | words: 30 }} <i class="fa fa-external-link"></i></a></td>
+            <!--<td class="text-left"><a href="{{content.url}}" title="{{content.title}}" target="_blank">{{content.title | words: 30 }} <i class="fa fa-external-link"></i></a></td>-->
+            <td class="text-left"><a  title="{{content.title}}" target="_blank">{{content.title | words: 30 }} <i class="fa fa-external-link"></i></a></td>
             <td>{{content.reading.total}}</td>
             <td>{{content.user.nickname}}</td>
             <td>{{content.status | translate: { display: 'name', same: 'value', source: statusType } }}</td>
