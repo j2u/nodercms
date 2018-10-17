@@ -10,7 +10,7 @@ var usersService = require('../services/users.service');
  * @param {Function} next
  */
 exports.check = function (req, res, next) {
-	if (req.session.user) {
+	if (req.session.user||req.path==='/api/article') {
 		next();
 	} else {
 		res.status(401).json({

@@ -6,6 +6,7 @@ var moment = require('moment');
 var categories = require('../models/categories.model');
 var contentsModel = require('../models/contents.model');
 var mediaModel = require('../models/media.model');
+var serverConfig=require('../../config/server.config');
 
 /**
  * 单条内容
@@ -147,7 +148,7 @@ exports.list = function (options, callback) {
             content = content.toObject();
             if (_.get(content, 'category.path')) content.url = content.category.path + '/' + content.alias;
 
-            if (content.thumbnail) content.thumbnail.src = thumbnailSrc;
+            if (content.thumbnail) content.thumbnail.src = serverConfig.host+':'+serverConfig.port+thumbnailSrc;
 
             delete content.alias;
 
